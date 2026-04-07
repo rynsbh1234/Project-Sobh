@@ -56,33 +56,13 @@
     return list.length;
   }
 
-  /* --- Replace this function to send data to your real backend --- */
   async function submitToBackend(entry) {
-    /*
-     * EXAMPLE — Formspree:
-     *   const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-     *     method: "POST",
-     *     headers: { "Content-Type": "application/json" },
-     *     body: JSON.stringify(entry),
-     *   });
-     *   if (!res.ok) throw new Error("Submission failed");
-     *
-     * EXAMPLE — Supabase:
-     *   const { error } = await supabase.from("waitlist").insert([entry]);
-     *   if (error) throw error;
-     *
-     * EXAMPLE — Custom API endpoint:
-     *   const res = await fetch("/api/waitlist", {
-     *     method: "POST",
-     *     headers: { "Content-Type": "application/json" },
-     *     body: JSON.stringify(entry),
-     *   });
-     *   if (!res.ok) throw new Error("Submission failed");
-     */
-
-    /* Simulate network latency for demo */
-    await new Promise((r) => setTimeout(r, 900));
-    return true;
+    const res = await fetch("https://formspree.io/f/xykbvgkn", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(entry),
+    });
+    if (!res.ok) throw new Error("Submission failed");
   }
 
   /* Validate email */
